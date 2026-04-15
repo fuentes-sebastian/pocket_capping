@@ -16,7 +16,7 @@ input_file='input_file.mol2' # must have all hydrogens and bonds, input file
 
 # pocket finding
 cutoff=5 # Angstroms
-lig_name='UNK' # ligand name (in this case, will search residue that starts with LIG name, dont have to be exact match)
+lig_name='UNK' # ligand name (will search residue that starts with lig_name, dont need to be exact match)
 r_CH=1.09 # distance of H capping the C atom, in Angstroms
 r_NH=1.06 # distance of H capping the N atom, in Angstroms
 
@@ -31,7 +31,7 @@ weight_dict={'H':1, 'C':12, 'N':14, 'O':16, 'S':32}
 warnings=[]
 
 # reading file dictionaries (must be a list of dictionaries)
-with open('dictionaries/dict_ref.txt', 'r', encoding='utf-8') as f:
+with open('../dictionaries/dict_ref.txt', 'r', encoding='utf-8') as f:
     ref_dict = ast.literal_eval(f.read())
 
 # reading system (.mol2, .itp or .top) file
